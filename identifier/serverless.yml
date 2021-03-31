@@ -16,12 +16,12 @@ provider:
     SEARCH_ENGINE_ID: ${self:custom.GoogleSearch.engineId}
   
 functions:
-  hello:
-    handler: dist/handlers/hello.handler
+  identifier:
+    handler: dist/handlers/identifier.handler
     events:
       - http:
           method: GET
-          path: /hello
+          path: /identifier/{barcode}
 
 custom:
   GoogleSearch:
