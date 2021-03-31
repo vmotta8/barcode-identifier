@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "jest --passWithNoTests --silent --noStackTrace --runInBand --setupFiles dotenv/config",
-    "test:unit": "npm test -- --watch -c jest-unit.config.js"
+    "test:unit": "npm test -- --watch -c jest-unit.config.js",
+    "test:ci": "npm test -- --coverage"
   },
   "keywords": [],
   "author": "",

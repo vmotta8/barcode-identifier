@@ -3,6 +3,7 @@ env.yml
 .env
 
 # package directories
+coverage
 node_modules
 dist
 jspm_packages
