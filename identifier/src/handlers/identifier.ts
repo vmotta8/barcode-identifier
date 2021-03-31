@@ -1,19 +1,13 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult, Context } from 'aws-lambda'
 import { commonMiddleware } from '../lib/middlewares/commonMiddleware'
-import { HelloService } from './services/helloService'
+import { IdentifierService } from './services/identifier'
 import createError from 'http-errors'
 
-/*
-const repository = new Repository()
-const service = new HelloService(
-  repository
-)
-*/
-const helloService = new HelloService()
+const identifierService = new IdentifierService()
 
-async function hello (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
+async function identifier (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
   try {
-    const hello = helloService.execute()
+    const hello = identifierService.execute()
     return {
       statusCode: 200,
       body: JSON.stringify({ message: hello })
@@ -24,4 +18,4 @@ async function hello (event: APIGatewayProxyEvent, context: Context): Promise<AP
   }
 }
 
-export const handler = commonMiddleware(hello)
+export const handler = commonMiddleware(identifier)
