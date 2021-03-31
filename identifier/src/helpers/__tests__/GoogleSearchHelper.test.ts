@@ -27,7 +27,7 @@ describe('google search helper', () => {
   })
 
   describe('product name function', () => {
-    it('should return an error if barcode does not exist', async () => {
+    it('should return the right name', async () => {
       const str = 'oi oi oi tudo tudo tudo bem bem bem com voce'
       const obj = { bem: 3, com: 1, oi: 3, tudo: 3, voce: 1 }
       const words = Gsearch.ProductName(str, obj)
@@ -36,7 +36,7 @@ describe('google search helper', () => {
   })
 
   describe('code to name function', () => {
-    it('should return an error if barcode does not exist', async () => {
+    it('should return the right product', async () => {
       const product = await Gsearch.CodeToName('9788580575132')
       expect(product).toEqual('rei de amarelo livro')
     })
