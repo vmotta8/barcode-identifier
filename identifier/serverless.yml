@@ -10,6 +10,10 @@ provider:
   runtime: nodejs12.x
   memorySize: 256
   stage: ${opt:stage, 'dev'}
+  region: eu-west-1
+  environment:
+    CUSTOM_SEARCH_API_KEY: ${self:custom.GoogleSearch.apiKey}
+    SEARCH_ENGINE_ID: ${self:custom.GoogleSearch.engineId}
   
 functions:
   hello:
@@ -20,5 +24,8 @@ functions:
           path: /hello
 
 custom:
+  GoogleSearch:
+    apiKey: ${file(env.yml):GoogleSearch.apiKey}
+    engineId: ${file(env.yml):GoogleSearch.engineId}
   bundle:
     linting: false
