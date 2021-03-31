@@ -18,6 +18,7 @@ provider:
 functions:
   identifier:
     handler: dist/handlers/identifier.handler
+    timeout: 45
     events:
       - http:
           method: GET
