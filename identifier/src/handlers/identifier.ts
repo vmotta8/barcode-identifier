@@ -17,12 +17,12 @@ async function identifier (event: APIGatewayProxyEvent, context: Context): Promi
     throw new createError.BadRequest('Invalid path barcode.')
   }
 
-  const response = identifierService.execute(barcode)
+  const response = await identifierService.execute(barcode)
 
   try {
     return {
       statusCode: 200,
-      body: JSON.stringify(response)
+      body: JSON.stringify({ product: response })
     }
   } catch (error) {
     console.log(error)
