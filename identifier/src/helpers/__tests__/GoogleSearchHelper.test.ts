@@ -31,7 +31,7 @@ describe('google search helper', () => {
       const str = 'oi oi oi tudo tudo tudo bem bem bem com voce'
       const obj = { bem: 3, com: 1, oi: 3, tudo: 3, voce: 1 }
       const words = Gsearch.ProductName(str, obj)
-      expect(words).toEqual('oi tudo bem')
+      expect(words).toEqual('oi tudo')
     })
   })
 

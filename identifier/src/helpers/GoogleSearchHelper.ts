@@ -63,7 +63,7 @@ class Gsearch {
   ProductName (str: string, countedWords: { [x: string]: number }): any {
     const keysSorted = Object.keys(countedWords).sort(function (a, b) { return countedWords[b] - countedWords[a] })
 
-    const n = countedWords[keysSorted[0]] * 0.1
+    const n = countedWords[keysSorted[0]] * 0.6
     let nameArr = []
     for (const name of keysSorted) {
       if (countedWords[name] >= n) {
