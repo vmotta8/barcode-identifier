@@ -2,24 +2,18 @@
 
 Serverless API that identifies product names by barcode using the Google Search API.
 
-## Example
+### Example
 <img src="public/example.png">
 
-## How to contribute
-Clone the project
-```
-git clone https://github.com/vmotta8/barcode-identifier.git
-```
+### Test endpoint
+Brave New World - Aldous Huxley
+  - [Barcode: 9780099477464](https://xc3c9rhhqb.execute-api.eu-west-1.amazonaws.com/dev/identifier/9780099477464)
 
-Create .env
-```
-CUSTOM_SEARCH_API_KEY=
-SEARCH_ENGINE_ID=
-```
 
-Create env.yml
-```
-GoogleSearch:
-  apiKey: 
-  engineId: 
-```
+### Tools and technologies
+  - Github Actions
+  - Nodejs
+  - Typescript
+  - Jest
+  - Aws Lambda Functions
+  - Google Search Api
