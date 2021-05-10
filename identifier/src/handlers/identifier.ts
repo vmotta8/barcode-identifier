@@ -6,20 +6,15 @@ import createError from 'http-errors'
 const identifierService = new IdentifierService()
 
 async function identifier (event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult> {
-  if (!event.pathParameters) {
-    console.log(event.pathParameters)
-    throw new createError.BadRequest('Invalid path parameter.')
-  }
-  const barcode = event.pathParameters.barcode
+  const barcode = event.pathParameters ? event.pathParameters.barcode : false
 
   if (!barcode) {
     console.log(event.pathParameters)
     throw new createError.BadRequest('Invalid path barcode.')
   }
 
-  const response = await identifierService.execute(barcode)
-
   try {
+    const response = await identifierService.execute(barcode)
     return {
       statusCode: 200,
       body: JSON.stringify({ product: response })
