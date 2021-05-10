@@ -1,5 +1,6 @@
 import Gsearch from '../GoogleSearchHelper'
 
+jest.setTimeout(30000)
 describe('google search helper', () => {
   describe('query to string function', () => {
     it('should return an error if barcode does not exist', async () => {
@@ -38,7 +39,7 @@ describe('google search helper', () => {
   describe('code to name function', () => {
     it('should return the right product', async () => {
       const product = await Gsearch.CodeToName('9788580575132')
-      expect(product).toEqual('rei de amarelo livro')
+      expect(product).toEqual('rei de amarelo')
     })
   })
 })
