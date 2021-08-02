@@ -1,4 +1,5 @@
 # Simple Barcode Identifier
+## (deprecated)
 
 Serverless API that identifies product names by barcode using the Google Search API.
 
